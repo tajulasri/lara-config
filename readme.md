@@ -61,9 +61,9 @@ Insert new Value
             {
                 $configurations->setNewConfig('key','value');
             }
-            catch(LaraConfigException $e) {
+            catch(Exception $e) {
 
-
+                return $e->getMessage();
             }
         }
     }
