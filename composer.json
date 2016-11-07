@@ -1,0 +1,20 @@
+{
+    "name": "tajul/lara-config",
+    "description": "Config style wordpress",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Tajul",
+            "email": "tajul@nazrol.tech"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+
+    "autoload": {
+
+        "psr-4": {
+            "LaraConfig\\": "src/LaraConfig"
+        }
+    }
+}
