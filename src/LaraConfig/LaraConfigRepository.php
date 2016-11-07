@@ -89,8 +89,10 @@ class LaraConfigRepository  {
 		if(! array_key_exists($key,$this->laraConfig)) {
 			Configuration::create(['key' => $key,'value' => $value]);
 		}
+		else {
 
-		throw new LaraConfigException("config key already exists. {$key} .");
+			throw new LaraConfigException("config key already exists. {$key} .");
+		}
 	}
 
 	/**

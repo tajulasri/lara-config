@@ -4,7 +4,7 @@ namespace LaraConfig\Exceptions;
 
 use Exception;
 
-class LaraConfigException extends Exception;
+class LaraConfigException extends Exception
 {
 
 }

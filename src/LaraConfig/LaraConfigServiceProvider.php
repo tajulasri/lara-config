@@ -18,7 +18,7 @@ class LaraConfigServiceProvider extends ServiceProvider
     	], 'migrations');
 
     	 $this->publishes([
-        	__DIR__.DIRECTORY_SEPARATOR.'config/laraconfig.php' => config_path('courier.php'),
+        	__DIR__.DIRECTORY_SEPARATOR.'config/laraconfig.php' => config_path('laraconfig.php'),
     	]);
     }
 
