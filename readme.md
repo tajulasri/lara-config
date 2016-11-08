@@ -20,11 +20,21 @@ run migration
     php artisan migrate 
 ```
 
-added into app.php
+register laraconfig services provider
 
 ```
-    LaraConfig\LaraConfigServiceProvider::class
+    LaraConfig\LaraConfigServiceProvider::class,
+    LaraConfig\LaraConfigFacadeServiceProvider::class,
 ```
+
+Register for facades alias
+```php
+
+    'LaraConfig' => LaraConfig\Facades\LaraConfigRepository::class,
+
+```
+
+
 Basic usage
 ```php
    
@@ -76,4 +86,33 @@ get config by key
             //if key are not exists return null
         }
     }
+```
+
+Or by using facades
+```php
+    
+    use LaraConfig\LaraConfigRepository;
+    
+
+    class ConfigController extends Controller
+    {
+    
+        public function configRouteBind() {
+           \LaraConfig::getCachedConfig();
+        }
+    }
+```
+
+Available methods
+```php
+       
+    //get all config key and values
+    \LaraConfig::getCachedConfig();
+    
+    //get config value using key
+    \LaraConfig::getDataByKey('key');
+    
+    //set new config value using key
+     \LaraConfig::setNewConfig('key','value);
+    
 ```

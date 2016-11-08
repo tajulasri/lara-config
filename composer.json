@@ -1,11 +1,11 @@
 {
     "name": "tajul/lara-config",
-    "description": "Config style wordpress",
+    "description": "Laravel 5 Config like wordpress wp_option()",
     "type": "library",
     "authors": [
         {
             "name": "Tajul",
-            "email": "tajul@nazrol.tech"
+            "email": "mtajulasri@gmail.com"
         }
     ],
     "minimum-stability": "dev",
