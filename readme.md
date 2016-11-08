@@ -20,23 +20,21 @@ run migration
     php artisan migrate 
 ```
 
+added into app.php
 
+```
+    LaraConfig\LaraConfigServiceProvider::class
+```
 Basic usage
 ```php
-    
-
-    use Illuminate\Config\Repository as ConfigRepository;
-    use Illuminate\Cache\Repository as CacheRepository;
+   
     use LaraConfig\LaraConfigRepository;
-
 
     class ConfigController extends Controller
     {
     
-        public function configRouteBind(CacheRepository $cache,ConfigRepository $config) {
-
-            $configurations = new LaraConfigRepository($cache,$config);
-            $configurations->getCachedConfig();
+        public function configRouteBind(LaraConfigRepository $config) {
+            $config->getCachedConfig();
         }
     }
 ```
@@ -45,21 +43,16 @@ Basic usage
 Insert new Value
 ```php
     
-
-    use Illuminate\Config\Repository as ConfigRepository;
-    use Illuminate\Cache\Repository as CacheRepository;
     use LaraConfig\LaraConfigRepository;
 
 
     class ConfigController extends Controller
     {
     
-        public function configRouteBind(CacheRepository $cache,ConfigRepository $config) {
-
-            $configurations = new LaraConfigRepository($cache,$config);
+        public function configRouteBind(LaraConfigRepository $config) {
             try
             {
-                $configurations->setNewConfig('key','value');
+                $config->setNewConfig('key','value');
             }
             catch(Exception $e) {
 
@@ -72,19 +65,14 @@ Insert new Value
 get config by key
 ```php
     
-
-    use Illuminate\Config\Repository as ConfigRepository;
-    use Illuminate\Cache\Repository as CacheRepository;
     use LaraConfig\LaraConfigRepository;
 
 
     class ConfigController extends Controller
     {
     
-        public function configRouteBind(CacheRepository $cache,ConfigRepository $config) {
-
-            $configurations = new LaraConfigRepository($cache,$config);
-            $configurations->getDataByKey('key');
+        public function configRouteBind(LaraConfigRepository $config) {
+            $config->getDataByKey('key');
             //if key are not exists return null
         }
     }

@@ -26,6 +26,6 @@ class LaraConfigFacadeServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->when('laraconfig.facades')->needs('CacheRepository','ConfigRepository')->give('LaraConfigRepository');
+        $this->app->when('LaraConfig\Facades\LaraConfig')->needs('CacheRepository','ConfigRepository')->give('LaraConfigRepository');
     }
 }
