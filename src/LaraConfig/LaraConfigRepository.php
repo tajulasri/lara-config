@@ -91,7 +91,7 @@ class LaraConfigRepository  {
 		}
 		else {
 			//update value based on key
-			Configuration::where('key' => $key)->update(['value' => $value]);
+			Configuration::where('key',$key)->update(['value' => $value]);
 		}
 	}
 
