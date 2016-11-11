@@ -90,8 +90,8 @@ class LaraConfigRepository  {
 			Configuration::create(['key' => $key,'value' => $value]);
 		}
 		else {
-
-			throw new LaraConfigException("config key already exists. {$key} .");
+			//update value based on key
+			Configuration::where('key' => $key)->update(['value' => $value]);
 		}
 	}
 
