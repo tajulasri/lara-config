@@ -1,7 +1,7 @@
 <?php
 
 return [
-	
-	'name' => 'lara-config',
-	'duration' => 10
+    
+    'name' => 'lara-config',
+    'duration' => 10
 ];

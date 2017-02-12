@@ -12,5 +12,8 @@ use Illuminate\Support\Facades\Facade;
 
 class LaraConfigRepository extends Facade
 {
-    protected static function getFacadeAccessor() { return 'laraconfig.facades'; }
+    protected static function getFacadeAccessor()
+    {
+        return 'laraconfig.facades';
+    }
 }

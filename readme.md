@@ -44,7 +44,7 @@ Basic usage
     {
     
         public function configRouteBind(LaraConfigRepository $config) {
-            $config->getCachedConfig();
+            $config->all();
         }
     }
 ```
@@ -62,7 +62,7 @@ Insert new Value
         public function configRouteBind(LaraConfigRepository $config) {
             try
             {
-                $config->setNewConfig('key','value');
+                $config->set('key','value');
             }
             catch(Exception $e) {
 
@@ -82,7 +82,7 @@ get config by key
     {
     
         public function configRouteBind(LaraConfigRepository $config) {
-            $config->getDataByKey('key');
+            $config->get('key');
             //if key are not exists return null
         }
     }
@@ -98,7 +98,7 @@ Or by using facades
     {
     
         public function configRouteBind() {
-           \LaraConfig::getCachedConfig();
+           \LaraConfig::all();
         }
     }
 ```
@@ -107,12 +107,12 @@ Available methods
 ```php
        
     //get all config key and values
-    \LaraConfig::getCachedConfig();
+    \LaraConfig::all();
     
     //get config value using key
-    \LaraConfig::getDataByKey('key');
+    \LaraConfig::get('key');
     
     //set new config value using key
-     \LaraConfig::setNewConfig('key','value);
+     \LaraConfig::set('key','value);
     
 ```

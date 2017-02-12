@@ -14,12 +14,12 @@ class LaraConfigServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-       		 __DIR__.DIRECTORY_SEPARATOR.'migrations/' => database_path('migrations')
-    	], 'migrations');
+                __DIR__.DIRECTORY_SEPARATOR.'migrations/' => database_path('migrations')
+        ], 'migrations');
 
-    	 $this->publishes([
-        	__DIR__.DIRECTORY_SEPARATOR.'config/laraconfig.php' => config_path('laraconfig.php'),
-    	]);
+        $this->publishes([
+            __DIR__.DIRECTORY_SEPARATOR.'config/laraconfig.php' => config_path('laraconfig.php'),
+        ]);
     }
 
     /**
@@ -30,7 +30,7 @@ class LaraConfigServiceProvider extends ServiceProvider
     public function register()
     {
         $this->mergeConfigFrom(
-        	__DIR__.'/config/laraconfig.php', 'laraconfig'
-    	);
+            __DIR__.'/config/laraconfig.php', 'laraconfig'
+        );
     }
 }
