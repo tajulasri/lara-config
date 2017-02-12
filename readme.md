@@ -9,17 +9,6 @@ installation
 ```
 
 
-publish vendor
-```
-    php artisan vendor:publish --provider=LaraConfig\LaraConfigServiceProvider
-
-```
-
-run migration
-```
-    php artisan migrate 
-```
-
 register laraconfig services provider
 
 ```
@@ -32,6 +21,25 @@ Register for facades alias
 
     'LaraConfig' => LaraConfig\Facades\LaraConfigRepository::class,
 
+```
+
+
+publish vendor
+```
+    php artisan vendor:publish --provider=LaraConfig\LaraConfigServiceProvider
+
+```
+
+
+publish vendor dirty ways
+```
+    php artisan vendor:publish
+
+```
+
+run migration
+```
+    php artisan migrate 
 ```
 
 
