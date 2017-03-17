@@ -123,7 +123,7 @@ class LaraConfigRepository
      */
     protected function loadCacheData()
     {
-        $configurations = $this->model->ll()->pluck('value', 'key')->toArray();
+        $configurations = $this->model->all()->pluck('value', 'key')->toArray();
         $this->cache->put($this->config->get(
             static::$configFile.'name'), $configurations,
             $this->config->get(static::$configFile.'duration'
